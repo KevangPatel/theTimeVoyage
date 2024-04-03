@@ -1,1 +1,2 @@
-<app-timeline></app-timeline>
+<app-timeline (eventDetailsEvent)="openEventDetails($event)"></app-timeline>
+<app-event-details *ngIf="isEventDetailsOpen" (closeEvent)="isEventDetailsOpen=false" ></app-event-details>

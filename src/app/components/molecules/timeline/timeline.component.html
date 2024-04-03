@@ -1,3 +1,7 @@
 <div class="timeline-grid">
-    <app-event-card class="event-card-wrapper flex-shrink-0" *ngFor="let event of [1,1,1,1,1,1,1]"></app-event-card>
+  <app-event-card
+    class="event-card-wrapper flex-shrink-0"
+    *ngFor="let event of [1, 1, 1, 1, 1, 1, 1]"
+    (click)="openEventDetails(event)"
+  ></app-event-card>
 </div>
