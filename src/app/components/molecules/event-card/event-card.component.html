@@ -1,1 +1,19 @@
-<p>event-card works!</p>
+<!-- year count -->
+<h6 class="text-center mb-4">2011</h6>
+
+<!-- event cards -->
+<div class="event-card-grid">
+  <div class="card" *ngFor="let event of events">
+    <figure class="mb-0">
+      <img
+        src="{{ event.image }}"
+        class="card-img-top img-fluid"
+        alt="{{ event.title }}"
+      />
+    </figure>
+    <div class="card-body">
+      <h5 class="card-title">{{ event.title }}</h5>
+      <p class="card-text">{{ event.date }}</p>
+    </div>
+  </div>
+</div>

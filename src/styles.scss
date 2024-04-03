@@ -9,17 +9,72 @@ $primary: #5051f9;
 $body-bg: #0d1117;
 $body-color: #b7b7b7;
 $font-family: "Ibarra Real Nova", serif;
+
 $link-decoration: none;
+$border-radius: 8px;
+$component-bg: #14171f;
+
+// Form control variables
+$input-border-color: transparent;
+$input-bg: #14171f;
+$input-focus-border-color: $primary;
+$input-focus-box-shadow: none;
+
+// Scrollbar
+$scrollbar-size: 8px;
+$scrollbar-border-radius: $border-radius;
+$scrollbar-thumb-bg: #2f3136;
+$scrollbar-track-bg: #c2c6ca;
+
+// Header
+$header-height: 70px;
+
+// Cards
+$card-bg: $component-bg;
+$card-border-radius: 1rem;
+$card-spacer-x: 0.725rem;
+$card-spacer-y: $card-spacer-x;
 
 // Custom styles goes here
 @import "../node_modules/bootstrap/scss/bootstrap.scss";
+
+// Global styles
+html,
+body {
+  height: 100%;
+  overflow: hidden;
+}
+.overflow-horizontal {
+  overflow-y: hidden;
+  overflow-x: auto;
+}
+
+// Scrollbar styles goes here
+::-webkit-scrollbar {
+  width: $scrollbar-size;
+  height: $scrollbar-size;
+}
+::-webkit-scrollbar-track {
+  background: $scrollbar-track-bg;
+  border-radius: $scrollbar-border-radius;
+}
+::-webkit-scrollbar-thumb {
+  background: $scrollbar-thumb-bg;
+  border-radius: $scrollbar-border-radius;
+}
+::-webkit-scrollbar-corner {
+  background: transparent;
+}
 
 // Sidebar styles goes here
 .primary-sidebar {
   height: 100%;
   flex: 0 0 250px;
   max-width: 250px;
-  background-color: #14171f;
+  background-color: $component-bg;
+  border-top-right-radius: 2 * $border-radius;
+  border-bottom-right-radius: 2 * $border-radius;
+  box-shadow: $box-shadow;
 
   .menu {
     &-list {
@@ -36,7 +91,7 @@ $link-decoration: none;
     &-item {
       padding: 12px 10px;
       background-color: #0d1117;
-      border-radius: 8px;
+      border-radius: $border-radius;
       cursor: pointer;
       transition: 0.4s all;
 
@@ -62,7 +117,103 @@ $link-decoration: none;
   }
 }
 
+// Search bar styles goes here
+.search-bar {
+  flex-shrink: 0;
+  position: relative;
+  input {
+    width: 250px;
+    padding: 0.375rem 2.5rem 0.375rem 0.75rem;
+    transition: 0.4s width;
+
+    &:focus {
+      width: 400px;
+    }
+  }
+
+  .icon-search {
+    position: absolute;
+    top: 11px;
+    right: 14px;
+  }
+}
+// titles
 .app-title {
   font-size: 22px;
-  padding: 20px 20px 10px;
+  padding: 16px 20px;
+  height: $header-height;
+  display: flex;
+  align-items: center;
+}
+.page-title {
+  font-size: 22px;
+  color: $white;
+}
+
+// Header styles goes here
+header {
+  height: $header-height;
+}
+
+// event cards
+.event-card-grid {
+  display: flex;
+  flex-direction: column;
+  grid-gap: 1.5rem;
+  max-width: 220px;
+  .card {
+    border: none;
+    box-shadow: $box-shadow;
+    transition: 0.4s transform;
+    cursor: pointer;
+
+    &:hover {
+      transform: translateY(-5px);
+    }
+
+    .card-body {
+      position: relative;
+
+      &:after {
+        content: "";
+        position: absolute;
+        top: auto;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        width: 80%;
+        margin: 0 auto;
+        height: 4px;
+        background-color: $primary;
+        border-top-left-radius: 4px;
+        border-top-right-radius: 4px;
+      }
+    }
+
+    .card-title {
+      font-size: 18px;
+      color: $primary;
+    }
+
+    .card-text {
+      font-size: 14px;
+      color: $text-muted;
+    }
+
+    figure {
+      height: 140px;
+      width: 100%;
+
+      .card-img-top {
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+  }
+}
+
+// Timeline
+.timeline-grid {
+  display: flex;
+  grid-gap: 2.5rem;
 }
