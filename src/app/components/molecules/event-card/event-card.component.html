@@ -8,7 +8,7 @@
 
 <!-- Event cards -->
 <div class="event-card-grid" >
-  <div class="card" *ngFor="let event of events" (click)="openEventDetails(event)">
+  <div class="card" *ngFor="let event of events">
     <figure class="mb-0">
       <img
         src="{{ event.image }}"
