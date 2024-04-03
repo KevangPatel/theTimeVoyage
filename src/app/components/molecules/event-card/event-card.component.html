@@ -1,9 +1,14 @@
-<!-- year count -->
+<!-- Year count -->
 <h6 class="year-text text-center mb-5">2011</h6>
 
-<!-- event cards -->
-<div class="event-card-grid">
-  <div class="card" *ngFor="let event of events">
+<!-- Show more button -->
+<div class="show-more">
+  <button class="btn btn-sm btn-dark">Show More</button>
+</div>
+
+<!-- Event cards -->
+<div class="event-card-grid" >
+  <div class="card" *ngFor="let event of events" (click)="openEventDetails(event)">
     <figure class="mb-0">
       <img
         src="{{ event.image }}"

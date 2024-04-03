@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 
 @Component({
   selector: 'app-event-card',
@@ -9,6 +9,9 @@ import { Component } from '@angular/core';
   styleUrl: './event-card.component.scss',
 })
 export class EventCardComponent {
+
+  @Output() eventDetailsEvent: EventEmitter<any> = new EventEmitter<any>();
+
   events = [
     {
       id: 1,
@@ -38,4 +41,9 @@ export class EventCardComponent {
       video: 'https://www.youtube.com/watch?v=1',
     },
   ];
+
+  openEventDetails(event: any) {
+    console.log(event)
+    this.eventDetailsEvent.emit(event);
+  }
 }

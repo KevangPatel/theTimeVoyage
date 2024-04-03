@@ -302,3 +302,15 @@ header {
     overflow: hidden;
   }
 }
+
+// show-more button
+.show-more {
+  position: absolute;
+  top: 32px;
+  right: 0;
+
+  .btn-sm {
+    padding: 0.15rem 0.25rem;
+    font-size: 11px;
+  }
+}

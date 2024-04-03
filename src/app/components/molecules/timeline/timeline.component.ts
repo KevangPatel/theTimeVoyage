@@ -16,6 +16,8 @@ export class TimelineComponent {
   constructor() {}
 
   openEventDetails(event: any) {
-    this.eventDetailsEvent.emit(event)
+    console.log(event)
+    this.eventDetailsEvent.emit(event);
+    // e.stopPropagation()
   }
 }
