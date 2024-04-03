@@ -19,6 +19,7 @@ $input-border-color: transparent;
 $input-bg: #14171f;
 $input-focus-border-color: $primary;
 $input-focus-box-shadow: none;
+$form-select-focus-box-shadow: none;
 
 // Scrollbar
 $scrollbar-size: 8px;
@@ -34,6 +35,8 @@ $card-bg: $component-bg;
 $card-border-radius: 1rem;
 $card-spacer-x: 0.725rem;
 $card-spacer-y: $card-spacer-x;
+
+$event-primary: #ff5907;
 
 // Custom styles goes here
 @import "../node_modules/bootstrap/scss/bootstrap.scss";
@@ -164,11 +167,24 @@ header {
   .card {
     border: none;
     box-shadow: $box-shadow;
-    transition: 0.4s transform;
+    transition: 0.4s all;
     cursor: pointer;
+    overflow: hidden;
 
     &:hover {
       transform: translateY(-5px);
+      border-radius: $border-radius;
+
+      .card-img-top {
+        transform: scale(1.05);
+      }
+
+      .card-title {
+        color: $event-primary;
+      }
+      .card-text {
+        color: $white;
+      }
     }
 
     .card-body {
@@ -200,6 +216,11 @@ header {
       color: $text-muted;
     }
 
+    .card-text,
+    .card-title {
+      transition: 0.4s color;
+    }
+
     figure {
       height: 140px;
       width: 100%;
@@ -207,6 +228,7 @@ header {
       .card-img-top {
         height: 100%;
         object-fit: cover;
+        transition: 0.4s all;
       }
     }
   }
@@ -215,5 +237,47 @@ header {
 // Timeline
 .timeline-grid {
   display: flex;
-  grid-gap: 2.5rem;
+  grid-gap: 4.5rem;
+
+  .event-card-wrapper {
+    position: relative;
+
+    .year-text {
+      transition: 0.4s color;
+    }
+
+    &:hover {
+      &:before,
+      &:after {
+        background-color: $event-primary;
+        box-shadow: 0px 0px 20px rgba($color: $event-primary, $alpha: 0.8);
+      }
+      .year-text {
+        color: $event-primary;
+      }
+    }
+
+    &:before,
+    &:after {
+      content: "";
+      position: absolute;
+      top: 40px;
+      background-color: #3d3d3d;
+      transition: 0.4s all;
+    }
+
+    &:before {
+      width: 2px;
+      height: 100%;
+      bottom: 0;
+      left: 50%;
+    }
+
+    &:after {
+      border-radius: 50%;
+      left: 49%;
+      width: 6px;
+      height: 6px;
+    }
+  }
 }
