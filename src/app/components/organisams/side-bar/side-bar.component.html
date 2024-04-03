@@ -1,0 +1,19 @@
+<aside class="d-flex flex-column h-100 overflow-hidden">
+  <!-- App Title -->
+  <h5 class="app-title mb-0">TimeVoyage</h5>
+
+  <!-- Menus -->
+  <ul class="menu-list">
+    <li
+      *ngFor="let menuItem of menuItems"
+      class="menu-item"
+      routerLinkActive="active"
+      [routerLink]="menuItem.path"
+    >
+      <a class="menu-link">
+        <span class="menu-icon" [class]="menuItem.iconClass"></span>
+        <span>{{ menuItem.label }}</span>
+      </a>
+    </li>
+  </ul>
+</aside>
