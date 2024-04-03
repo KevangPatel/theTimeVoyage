@@ -1,17 +1,52 @@
 <div class="modal d-block" tabindex="-1">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title">Modal title</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content shadow">
+      <!-- <div class="modal-header">
+        <h5 class="modal-title">The Begins Renanissance</h5>
+        <button
+          type="button"
+          class="btn-close"
+          aria-label="Close"
+          (click)="closeModal()"
+        ></button>
+      </div> -->
+      <div class="modal-body p-0">
+        <!-- Event image -->
+        <figure class="mb-0">
+          <img
+            src="../../../../assets/images/event1.jpg"
+            class="img-fluid"
+            alt="Event Image"
+          />
+        </figure>
+
+        <div class="p-3">
+          <div
+            class="d-flex align-items-center justify-content-between gap-2 flex-wrap mb-3"
+          >
+            <!-- Event title -->
+            <h5 class="modal-title text-primary">The Begins Renanissance</h5>
+
+            <!-- Event year -->
+            <span class="badge text-bg-warning">1998</span>
+          </div>
+          <!-- event description -->
+          <p class="mb-0">
+            The Renaissance period marks the revival of art, culture, and
+            learning in Europe, leading to significant advancements in science,
+            art, and philosophy.
+          </p>
         </div>
-        <div class="modal-body">
-          <p>Modal body text goes here.</p>
-        </div>
-        <div class="modal-footer">
-          <button type="button" (click)="closeModal()" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-          <button type="button"  class="btn btn-primary">Save changes</button>
-        </div>
+      </div>
+      <div class="modal-footer">
+        <button
+          type="button"
+          (click)="closeModal()"
+          class="btn btn-sm btn-dark"
+        >
+          Close
+        </button>
       </div>
     </div>
   </div>
+</div>
