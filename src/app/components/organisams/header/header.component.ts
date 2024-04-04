@@ -66,11 +66,14 @@ export class HeaderComponent {
     const currentStep = this.utilService.steps.getValue();
     let value;
     if (increase) {
-      value = currentStep / 10;
+      value = currentStep == 1 ? currentStep * 10 : currentStep + 10;
     } else {
-      value = currentStep * 10;
+      value = currentStep / 10;
+      if (value < 1) {
+        value = 1; // Ensuring the value doesn't go below 1
+      }
     }
-    if (value >= 1 && value <= 10) {
+    if (value >= 1) {
       this.utilService.steps.next(value);
       this.changeTimeline();
     }
@@ -100,7 +103,7 @@ export class HeaderComponent {
   }
 
   onSearchResultsForYear(searchResult: any) {
-    this.showEmptyMessage = false
+    this.showEmptyMessage = false;
     if (searchResult) {
     } else {
       this.timeLine = this.utilService.generateTimelineByRangeAndSteps(
