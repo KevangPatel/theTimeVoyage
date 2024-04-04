@@ -8,20 +8,45 @@
 
       <!-- Dropdowns -->
       <div>
-        <select class="form-select" aria-label="Filter">
-          <option selected>Filter Timeline</option>
-          <option value="1">One</option>
-          <option value="2">Two</option>
-          <option value="3">Three</option>
+        <select
+          class="form-select"
+          aria-label="Filter"
+          (change)="changeRange()"
+          [(ngModel)]="selectedRange"
+        >
+          <option selected disabled>Filter Range</option>
+          <option [value]="item.id" *ngFor="let item of rangeList">
+            {{ item.value }}
+          </option>
         </select>
       </div>
+      <ng-container *ngIf="isCustomStep">
+        <div>
+          <input
+            [(ngModel)]="customStep"
+            (ngModelChange)="customStepChange()"
+            type="number"
+            class="form-control"
+            id="customStep"
+            placeholder="Custom Interval"
+          />
+        </div>
+      </ng-container>
 
       <div>
-        <select class="form-select" aria-label="Filter">
-          <option selected>Filter Range</option>
-          <option value="1">One</option>
-          <option value="2">Two</option>
-          <option value="3">Three</option>
+        <select
+          class="form-select"
+          aria-label="Filter"
+          (change)="changeTimeline()"
+          [(ngModel)]="timeLineRangeValue"
+        >
+          <option selected disabled>Filter Timeline</option>
+          <option
+            *ngFor="let item of timeLineRange"
+            [value]="[item.startYear, item.endYear]"
+          >
+            {{ item.startYear }} - {{ item.endYear }}
+          </option>
         </select>
       </div>
     </div>

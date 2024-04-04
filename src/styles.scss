@@ -168,10 +168,13 @@ header {
 
 // event cards
 .event-card-grid {
+  --event-card-grid-max-width: 220px;
+  --event-card-grid-min-width: 200px;
   display: flex;
   flex-direction: column;
   grid-gap: 1.5rem;
-  max-width: 220px;
+  min-width: var(--event-card-grid-min-width);
+  max-width: var(--event-card-grid-max-width);
   .card {
     border: none;
     box-shadow: $box-shadow;
