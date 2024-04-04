@@ -5,9 +5,9 @@
         <!-- Event image -->
         <figure class="mb-0">
           <img
-            src="../../../../assets/images/event1.jpg"
+            [src]="eventDetails.image"
             class="img-fluid"
-            alt="Event Image"
+            [alt]="eventDetails.title"
           />
         </figure>
 
@@ -16,16 +16,14 @@
             class="d-flex align-items-center justify-content-between gap-2 flex-wrap mb-3"
           >
             <!-- Event title -->
-            <h5 class="modal-title text-primary">The Begins Renanissance</h5>
+            <h5 class="modal-title text-primary">{{ eventDetails.title }}</h5>
 
             <!-- Event year -->
-            <span class="badge text-bg-warning">1998</span>
+            <span class="badge text-bg-warning">{{ eventDetails.date }}</span>
           </div>
           <!-- event description -->
           <p class="mb-0">
-            The Renaissance period marks the revival of art, culture, and
-            learning in Europe, leading to significant advancements in science,
-            art, and philosophy.
+            {{ eventDetails.description }}
           </p>
         </div>
       </div>

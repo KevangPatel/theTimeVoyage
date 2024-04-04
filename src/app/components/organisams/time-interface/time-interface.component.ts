@@ -21,6 +21,7 @@ export class TimeInterfaceComponent {
   isEventDetailsOpen: boolean = false;
   isShowMore: boolean = false;
   eventList: any = [];
+  eventDetails: any;
 
   constructor(private utilService: UtilService) {}
 
@@ -30,7 +31,8 @@ export class TimeInterfaceComponent {
     });
   }
 
-  openEventDetails() {
+  openEventDetails(event: any) {
+    this.eventDetails = event;
     this.isEventDetailsOpen = true;
   }
 
