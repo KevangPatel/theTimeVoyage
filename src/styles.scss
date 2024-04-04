@@ -65,6 +65,15 @@ body {
   background-color: $component-bg;
 }
 
+// remove arrows from input
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  margin: 0;
+}
+
 // Scrollbar styles goes here
 ::-webkit-scrollbar {
   width: $scrollbar-size;
@@ -91,6 +100,28 @@ body {
   border-top-right-radius: 2 * $border-radius;
   border-bottom-right-radius: 2 * $border-radius;
   box-shadow: $box-shadow;
+  transition: 0.4s all;
+
+  @media screen and (max-width: 991px) {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 999;
+    transform: translateX(-100%);
+
+    .close-menu-label {
+      position: absolute;
+      right: 20px;
+      top: 20px;
+      font-size: 1.5rem;
+      cursor: pointer;
+      span {
+        color: #b7b7b7;
+      }
+    }
+  }
 
   .menu {
     &-list {
@@ -103,6 +134,11 @@ body {
       overflow-y: auto;
       overflow-x: hidden;
       list-style: none;
+
+      .menu-text {
+        white-space: nowrap;
+        transition: 0.4s all;
+      }
     }
     &-item {
       padding: 12px 10px;
@@ -138,13 +174,13 @@ body {
   flex-shrink: 0;
   position: relative;
   input {
-    width: 250px;
+    width: 180px;
     padding: 0.375rem 2.5rem 0.375rem 0.75rem;
     transition: 0.4s width;
 
-    &:focus {
-      width: 400px;
-    }
+    // &:focus {
+    //   width: 400px;
+    // }
   }
 
   .icon-search {
@@ -160,6 +196,9 @@ body {
   height: $header-height;
   display: flex;
   align-items: center;
+  span {
+    transition: 0.4s all;
+  }
 }
 .page-title {
   font-size: 22px;
@@ -171,6 +210,16 @@ header {
   height: $header-height;
 }
 
+// animations
+@keyframes fadeInOut {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
 // event cards
 .event-card-grid {
   --event-card-grid-max-width: 220px;
@@ -180,6 +229,9 @@ header {
   grid-gap: 1.5rem;
   min-width: var(--event-card-grid-min-width);
   max-width: var(--event-card-grid-max-width);
+  animation: fadeInOut 0.4s ease-in-out;
+  opacity: 1;
+  transition: 0.4s all;
   .card {
     border: none;
     box-shadow: $box-shadow;
@@ -341,4 +393,50 @@ app-event-list-overlay {
 .offcanvas.offcanvas-end {
   visibility: visible;
   transform: translate(0);
+}
+
+// Sidebar toggle
+#sidebarToggle {
+  &:checked {
+    & ~ .primary-sidebar {
+      flex: 0 0 82px;
+      max-width: 82px;
+
+      .app-title {
+        span {
+          transform: translateX(100%);
+          opacity: 0;
+          visibility: hidden;
+        }
+      }
+      .menu-list {
+        .menu-text {
+          transform: translateX(100%);
+          opacity: 0;
+          visibility: hidden;
+        }
+      }
+    }
+    @media screen and (max-width: 991px) {
+      & ~ .primary-sidebar {
+        flex: 0 0 100%;
+        max-width: 100%;
+        transform: translateX(0);
+        .app-title {
+          span {
+            transform: translateX(0);
+            opacity: 1;
+            visibility: visible;
+          }
+        }
+        .menu-list {
+          .menu-text {
+            transform: translateX(0);
+            opacity: 1;
+            visibility: visible;
+          }
+        }
+      }
+    }
+  }
 }

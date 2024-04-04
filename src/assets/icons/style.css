@@ -1,10 +1,10 @@
 @font-face {
   font-family: 'timeline-voyage';
-  src:  url('fonts/timeline-voyage.eot?fm6qbd');
-  src:  url('fonts/timeline-voyage.eot?fm6qbd#iefix') format('embedded-opentype'),
-    url('fonts/timeline-voyage.ttf?fm6qbd') format('truetype'),
-    url('fonts/timeline-voyage.woff?fm6qbd') format('woff'),
-    url('fonts/timeline-voyage.svg?fm6qbd#timeline-voyage') format('svg');
+  src:  url('fonts/timeline-voyage.eot?f6fvt7');
+  src:  url('fonts/timeline-voyage.eot?f6fvt7#iefix') format('embedded-opentype'),
+    url('fonts/timeline-voyage.ttf?f6fvt7') format('truetype'),
+    url('fonts/timeline-voyage.woff?f6fvt7') format('woff'),
+    url('fonts/timeline-voyage.svg?f6fvt7#timeline-voyage') format('svg');
   font-weight: normal;
   font-style: normal;
   font-display: block;
@@ -25,6 +25,12 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+.icon-filter:before {
+  content: "\e905";
+}
+.icon-menu:before {
+  content: "\e904";
+}
 .icon-search:before {
   content: "\e903";
 }

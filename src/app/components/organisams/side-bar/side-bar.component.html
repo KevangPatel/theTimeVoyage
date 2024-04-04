@@ -1,10 +1,13 @@
 <aside class="d-flex flex-column h-100 overflow-hidden">
   <!-- App Title -->
   <h5 class="app-title d-flex gap-2 mb-0">
-    <img src="../../../../assets/images/logo.svg" alt="Logo">
+    <img src="../../../../assets/images/logo.svg" alt="Logo" />
     <span>TimeVoyage</span>
   </h5>
 
+  <label class="close-menu-label d-block d-lg-none mb-0" for="sidebarToggle">
+    <span class="btn-close" aria-label="Close"></span>
+  </label>
   <!-- Menus -->
   <ul class="menu-list">
     <li
@@ -15,7 +18,7 @@
     >
       <a class="menu-link">
         <span class="menu-icon" [class]="menuItem.iconClass"></span>
-        <span>{{ menuItem.label }}</span>
+        <span class="menu-text">{{ menuItem.label }}</span>
       </a>
     </li>
   </ul>
