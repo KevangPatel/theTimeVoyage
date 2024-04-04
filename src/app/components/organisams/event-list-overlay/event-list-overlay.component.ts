@@ -5,6 +5,7 @@ import {
   SimpleChanges,
 } from '@angular/core';
 import { EventCardComponent } from '../../molecules/event-card/event-card.component';
+import { UtilService } from '../../../services/util.service';
 
 @Component({
   selector: 'app-event-list-overlay',
@@ -17,7 +18,16 @@ import { EventCardComponent } from '../../molecules/event-card/event-card.compon
 export class EventListOverlayComponent {
   @Input() eventList: any[];
 
+  title: number;
+
+  constructor(private utilService: UtilService) {}
+
   ngOnChanges(changes: SimpleChanges) {
-    console.log(changes,this.eventList);
+    console.log(changes, this.eventList);
+    this.title = this.eventList.length && this.eventList[0].date;
+  }
+
+  closeOverlay() {
+    this.utilService.closeShowMorePopUp.next(false);
   }
 }

@@ -12,14 +12,17 @@ export class UtilService {
     this.timelineRange
   );
 
-  constructor() {
-  }
+  closeShowMorePopUp: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(
+    false
+  );
+
+  constructor() {}
 
   getStep(): Observable<number> {
     return this.steps.asObservable();
   }
 
-  getTimeListList():Observable<number[]>{
+  getTimeListList(): Observable<number[]> {
     return this.timeLineList.asObservable();
   }
 

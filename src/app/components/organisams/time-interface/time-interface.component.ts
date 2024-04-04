@@ -3,6 +3,7 @@ import { TimelineComponent } from '../../molecules/timeline/timeline.component';
 import { EventDetailsComponent } from '../event-details/event-details.component';
 import { CommonModule } from '@angular/common';
 import { EventListOverlayComponent } from '../event-list-overlay/event-list-overlay.component';
+import { UtilService } from '../../../services/util.service';
 
 @Component({
   selector: 'app-time-interface',
@@ -21,7 +22,13 @@ export class TimeInterfaceComponent {
   isShowMore: boolean = false;
   eventList: any = [];
 
-  constructor() {}
+  constructor(private utilService: UtilService) {}
+
+  ngOnInit() {
+    this.utilService.closeShowMorePopUp.subscribe((res) => {
+      this.isShowMore = res;
+    });
+  }
 
   openEventDetails() {
     this.isEventDetailsOpen = true;
