@@ -1,11 +1,6 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import {
-  Subject,
-  debounceTime,
-  distinctUntilChanged,
-  switchMap
-} from 'rxjs';
+import { Subject, debounceTime, distinctUntilChanged, switchMap } from 'rxjs';
 
 @Component({
   selector: 'app-search-bar',
@@ -15,11 +10,13 @@ import {
   styleUrl: './search-bar.component.scss',
 })
 export class SearchBarComponent {
-  @Input() searchMethod: (searchedText: string) => any;
+  @Input() placeholder: string;
+  @Input() inputType: string;
+  @Input() searchMethod: (searchedText: any) => any;
   @Output() searchResults: EventEmitter<any> = new EventEmitter<any>();
 
   searchValue: string;
-  searchTectChanges: Subject<string> = new Subject<string>();
+  searchTectChanges: Subject<any> = new Subject<any>();
 
   constructor() {
     this.searchTectChanges

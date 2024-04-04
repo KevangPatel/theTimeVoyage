@@ -1,12 +1,12 @@
-import { Component } from '@angular/core';
-import { SearchBarComponent } from '../../atoms/search-bar/search-bar.component';
-import { IdValue, TimeLineRange } from '../../../models/mode.interface';
-import { mainConstants } from '../../../constants/main.constants';
 import { CommonModule } from '@angular/common';
-import { UtilService } from '../../../services/util.service';
+import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { debounceTime, filter, map, of } from 'rxjs';
+import { map, of } from 'rxjs';
+import { mainConstants } from '../../../constants/main.constants';
+import { IdValue, TimeLineRange } from '../../../models/mode.interface';
 import { ApiService } from '../../../services/api.service';
+import { UtilService } from '../../../services/util.service';
+import { SearchBarComponent } from '../../atoms/search-bar/search-bar.component';
 
 @Component({
   selector: 'app-headers',
@@ -73,6 +73,26 @@ export class HeaderComponent {
           );
         })
       );
+    }
+  }
+
+  onSearchByYear(searchedText: number) {
+    if (searchedText) {
+      this.utilService.timeLineList.next([+searchedText]);
+      return of(true);
+    } else {
+      return of(false);
+    }
+  }
+
+  onSearchResultsForYear(searchResult: any) {
+    if (searchResult) {
+    } else {
+      this.timeLine = this.utilService.generateTimelineByRangeAndSteps(
+        2000,
+        2090
+      );
+      this.utilService.timeLineList.next(this.timeLine);
     }
   }
 

@@ -1,9 +1,9 @@
 <div class="search-bar">
   <input
-    type="search"
+    [type]="inputType"
     class="form-control"
     id="searchVoyage"
-    placeholder="Search Here"
+    [placeholder]="placeholder"
     [(ngModel)]="searchValue"
     (ngModelChange)="onSearchTextChange($event)"
   />

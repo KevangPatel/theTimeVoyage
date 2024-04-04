@@ -8,6 +8,16 @@
       <!-- Search bar -->
       <app-search-bar
         class="flex-shrink-0"
+        [placeholder]="'Search by Year'"
+        [inputType]="'number'"
+        [searchMethod]="onSearchByYear.bind(this)"
+        (searchResults)="onSearchResultsForYear($event)"
+      ></app-search-bar>
+
+      <app-search-bar
+        class="flex-shrink-0"
+        [placeholder]="'Search by Text'"
+        [inputType]="'text'"
         [searchMethod]="onSearch.bind(this)"
         (searchResults)="onSearchResults($event)"
       ></app-search-bar>
