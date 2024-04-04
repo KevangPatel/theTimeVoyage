@@ -6,7 +6,7 @@ import { BehaviorSubject, Observable } from 'rxjs';
 })
 export class UtilService {
   steps: BehaviorSubject<number> = new BehaviorSubject<number>(10);
-  timelineRange: number[] = this.generateTimelineByRangeAndSteps(2000, 2050);
+  timelineRange: number[] = this.generateTimelineByRangeAndSteps(2000, 2090);
 
   timeLineList: BehaviorSubject<number[]> = new BehaviorSubject<number[]>(
     this.timelineRange

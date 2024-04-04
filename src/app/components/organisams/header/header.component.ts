@@ -5,7 +5,8 @@ import { mainConstants } from '../../../constants/main.constants';
 import { CommonModule } from '@angular/common';
 import { UtilService } from '../../../services/util.service';
 import { FormsModule } from '@angular/forms';
-import { debounceTime } from 'rxjs';
+import { debounceTime, filter, map, of } from 'rxjs';
+import { ApiService } from '../../../services/api.service';
 
 @Component({
   selector: 'app-headers',
@@ -24,7 +25,10 @@ export class HeaderComponent {
   isCustomStep: boolean;
   customStep: number | null;
 
-  constructor(private utilService: UtilService) {}
+  constructor(
+    private utilService: UtilService,
+    private apiService: ApiService
+  ) {}
 
   ngOnInit() {}
 
@@ -56,5 +60,33 @@ export class HeaderComponent {
       this.utilService.steps.next(10);
     }
     this.changeTimeline();
+  }
+
+  onSearch(searchedText: string) {
+    if (searchedText == '') {
+      return of(false);
+    } else {
+      return this.apiService.getAllEvents().pipe(
+        map((events: any[]) => {
+          return events.filter((event) =>
+            event.title.toLowerCase().includes(searchedText.toLowerCase())
+          );
+        })
+      );
+    }
+  }
+
+  onSearchResults(searchResult: any) {
+    if (searchResult) {
+      this.timeLine =
+        searchResult && searchResult.map((event: any) => event.date);
+      this.utilService.timeLineList.next(this.timeLine);
+    } else {
+      this.timeLine = this.utilService.generateTimelineByRangeAndSteps(
+        2000,
+        2090
+      );
+      this.utilService.timeLineList.next(this.timeLine);
+    }
   }
 }

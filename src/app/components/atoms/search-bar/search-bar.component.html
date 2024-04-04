@@ -4,6 +4,8 @@
     class="form-control"
     id="searchVoyage"
     placeholder="Search Here"
+    [(ngModel)]="searchValue"
+    (ngModelChange)="onSearchTextChange($event)"
   />
   <label for="searchVoyage" class="icon-search"></label>
 </div>

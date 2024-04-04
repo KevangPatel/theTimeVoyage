@@ -6,7 +6,11 @@
 
     <div class="d-flex align-items-center flex-wrap gap-3">
       <!-- Search bar -->
-      <app-search-bar class="flex-shrink-0"></app-search-bar>
+      <app-search-bar
+        class="flex-shrink-0"
+        [searchMethod]="onSearch.bind(this)"
+        (searchResults)="onSearchResults($event)"
+      ></app-search-bar>
 
       <!-- Dropdowns -->
       <div>
