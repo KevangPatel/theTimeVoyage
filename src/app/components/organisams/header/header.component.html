@@ -69,11 +69,24 @@
       <!-- Start: Zoom In/Out Button -->
       <div class="d-flex justify-content-end">
         <div class="btn-group" role="group" aria-label="Basic example">
-          <button type="button" class="btn btn-dark">-</button>
-          <button type="button" class="btn btn-dark">+</button>
+          <button
+            type="button"
+            class="btn btn-dark"
+            (click)="increaseOrdecreaseRange(false)"
+          >
+            -
+          </button>
+          <button
+            type="button"
+            class="btn btn-dark"
+            (click)="increaseOrdecreaseRange(true)"
+          >
+            +
+          </button>
         </div>
       </div>
       <!-- End: Zoom In/Out Button -->
     </div>
   </div>
 </header>
+<h2 class="text-center" *ngIf="showEmptyMessage">No Result found</h2>

@@ -24,7 +24,7 @@ export class HeaderComponent {
   timeLineRangeValue: string = '2000,2099';
   isCustomStep: boolean;
   customStep: number | null;
-
+  showEmptyMessage: boolean;
   constructor(
     private utilService: UtilService,
     private apiService: ApiService
@@ -62,6 +62,20 @@ export class HeaderComponent {
     this.changeTimeline();
   }
 
+  increaseOrdecreaseRange(increase: boolean) {
+    const currentStep = this.utilService.steps.getValue();
+    let value;
+    if (increase) {
+      value = currentStep / 10;
+    } else {
+      value = currentStep * 10;
+    }
+    if (value >= 1 && value <= 10) {
+      this.utilService.steps.next(value);
+      this.changeTimeline();
+    }
+  }
+
   onSearch(searchedText: string) {
     if (searchedText == '') {
       return of(false);
@@ -86,6 +100,7 @@ export class HeaderComponent {
   }
 
   onSearchResultsForYear(searchResult: any) {
+    this.showEmptyMessage = false
     if (searchResult) {
     } else {
       this.timeLine = this.utilService.generateTimelineByRangeAndSteps(
@@ -97,11 +112,13 @@ export class HeaderComponent {
   }
 
   onSearchResults(searchResult: any) {
-    if (searchResult) {
+    if (searchResult.length) {
       this.timeLine =
         searchResult && searchResult.map((event: any) => event.date);
       this.utilService.timeLineList.next(this.timeLine);
+      this.showEmptyMessage = false;
     } else {
+      this.showEmptyMessage = false;
       this.timeLine = this.utilService.generateTimelineByRangeAndSteps(
         2000,
         2090

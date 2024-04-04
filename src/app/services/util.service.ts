@@ -33,4 +33,14 @@ export class UtilService {
     }
     return timeline;
   }
+
+  increaseOrdecreaseRange() {
+    let timeline = this.timeLineList.getValue();
+    if (timeline.length > 10) {
+      timeline.pop();
+    } else {
+      timeline.push(timeline[timeline.length - 1] + 1);
+    }
+    this.timeLineList.next(timeline);
+  }
 }
