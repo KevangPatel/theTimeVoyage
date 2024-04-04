@@ -13,11 +13,14 @@ export class UtilService {
   );
 
   constructor() {
-    console.log(this.timeLineList.getValue());
   }
 
   getStep(): Observable<number> {
     return this.steps.asObservable();
+  }
+
+  getTimeListList():Observable<number[]>{
+    return this.timeLineList.asObservable();
   }
 
   generateTimelineByRangeAndSteps(startYear: number, endYear: number) {

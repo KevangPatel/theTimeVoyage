@@ -20,7 +20,7 @@ export class HeaderComponent {
   timeLine: number[] = [];
 
   selectedRange: number = 10;
-  timeLineRangeValue: string = '2100,2199';
+  timeLineRangeValue: string = '2000,2099';
   isCustomStep: boolean;
   customStep: number | null;
 
@@ -29,14 +29,12 @@ export class HeaderComponent {
   ngOnInit() {}
 
   changeTimeline() {
-    console.log(this.timeLineRangeValue);
     const range = this.timeLineRangeValue.split(',');
-
     this.timeLine = this.utilService.generateTimelineByRangeAndSteps(
       +range[0],
       +range[1]
     );
-    console.log(this.timeLine);
+    this.utilService.timeLineList.next(this.timeLine);
   }
 
   changeRange() {
@@ -48,7 +46,6 @@ export class HeaderComponent {
       this.isCustomStep = false;
       this.utilService.steps.next(selectedRange);
       this.changeTimeline();
-      console.log(this.utilService.steps.getValue());
     }
   }
 

@@ -21,8 +21,7 @@ export class TimeInterfaceComponent {
 
   constructor() {}
 
-  openEventDetails(eventDetails: any) {
-    console.log('called');
+  openEventDetails() {
     this.isEventDetailsOpen = true;
   }
 }
