@@ -21,6 +21,91 @@ class MainConstans {
     { id: 40, value: '40' },
     { id: 5, value: 'Custom' },
   ];
+
+  eventList = [
+    {
+      id: 2,
+      title: 'Declaration of Independence',
+      date: 1776,
+      description:
+        'The Declaration of Independence was adopted by the Continental Congress, declaring the 13 American colonies independent from British rule and laying the foundation for the United States.',
+      image: '../../../assets/images/event2.jpg',
+      video: 'https://www.youtube.com/watch?v=1',
+    },
+    {
+      id: 3,
+      title: 'Fall of the Berlin Wall',
+      date: 2020,
+      description:
+        'The fall of the Berlin Wall symbolized the end of the Cold War and the reunification of East and West Germany, marking a significant moment in modern history.',
+      image: '../../../assets/images/event3.jpg',
+      video: 'https://www.youtube.com/watch?v=1',
+    },
+
+    {
+      id: 4,
+      title: 'Fall of the Berlin Wall',
+      date: 2000,
+      description:
+        'The fall of the Berlin Wall symbolized the end of the Cold War and the reunification of East and West Germany, marking a significant moment in modern history.',
+      image: '../../../assets/images/event3.jpg',
+      video: 'https://www.youtube.com/watch?v=1',
+    },
+    {
+      id: 5,
+      title: 'Fall of the Berlin Wall',
+      date: 2020,
+      description:
+        'The fall of the Berlin Wall symbolized the end of the Cold War and the reunification of East and West Germany, marking a significant moment in modern history.',
+      image: '../../../assets/images/event3.jpg',
+      video: 'https://www.youtube.com/watch?v=1',
+    },
+    {
+      id: 34,
+      title: 'Fall ',
+      date: 2020,
+      description:
+        'The fall of the Berlin Wall symbolized the end of the Cold War and the reunification of East and West Germany, marking a significant moment in modern history.',
+      image: '../../../assets/images/event3.jpg',
+      video: 'https://www.youtube.com/watch?v=1',
+    },
+    {
+      id: 53,
+      title: 'UPl',
+      date: 2020,
+      description:
+        'The fall of the Berlin Wall symbolized the end of the Cold War and the reunification of East and West Germany, marking a significant moment in modern history.',
+      image: '../../../assets/images/event3.jpg',
+      video: 'https://www.youtube.com/watch?v=1',
+    },
+    {
+      id: 6,
+      title: 'Fall of the Berlin Wall',
+      date: 2005,
+      description:
+        'The fall of the Berlin Wall symbolized the end of the Cold War and the reunification of East and West Germany, marking a significant moment in modern history.',
+      image: '../../../assets/images/event3.jpg',
+      video: 'https://www.youtube.com/watch?v=1',
+    },
+    {
+      id: 7,
+      title: 'Fall of the Berlin Wall',
+      date: 2015,
+      description:
+        'The fall of the Berlin Wall symbolized the end of the Cold War and the reunification of East and West Germany, marking a significant moment in modern history.',
+      image: '../../../assets/images/event3.jpg',
+      video: 'https://www.youtube.com/watch?v=1',
+    },
+    {
+      id: 8,
+      title: 'Fall of the Berlin Wall',
+      date: 2015,
+      description:
+        'The fall of the Berlin Wall symbolized the end of the Cold War and the reunification of East and West Germany, marking a significant moment in modern history.',
+      image: '../../../assets/images/event3.jpg',
+      video: 'https://www.youtube.com/watch?v=1',
+    },
+  ];
 }
 
 export const mainConstants = new MainConstans();

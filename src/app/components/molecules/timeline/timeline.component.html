@@ -1,8 +1,9 @@
-<div class="timeline-grid">
+<div class="timeline-grid h-100">
   <app-event-card
     class="event-card-wrapper flex-shrink-0"
     *ngFor="let year of timelineList"
     (eventDetailsEvent)="openEventDetails($event)"
+    (showMoreEvent)="showMore($event)"
     [year]="year"
     [timelineList]="timelineList"
   ></app-event-card>

@@ -55,9 +55,14 @@ body {
   height: 100%;
   overflow: hidden;
 }
+
 .overflow-horizontal {
   overflow-y: hidden;
   overflow-x: auto;
+}
+
+.content-wrapper {
+  background-color: $component-bg;
 }
 
 // Scrollbar styles goes here
@@ -286,7 +291,7 @@ header {
 
     &:before {
       width: 2px;
-      height: 100%;
+      height: calc(100% - 40px);
       bottom: 0;
       left: 50%;
     }

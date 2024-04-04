@@ -1,8 +1,10 @@
 <header class="p-3">
-  <div class="d-flex align-items-center justify-content-between gap-3">
+  <div
+    class="d-flex align-items-center justify-content-between flex-wrap gap-3"
+  >
     <h5 class="page-title mb-0">Timeline</h5>
 
-    <div class="d-flex align-items-center gap-3">
+    <div class="d-flex align-items-center flex-wrap gap-3">
       <!-- Search bar -->
       <app-search-bar class="flex-shrink-0"></app-search-bar>
 
@@ -49,6 +51,15 @@
           </option>
         </select>
       </div>
+
+      <!-- Start: Zoom In/Out Button -->
+      <div class="d-flex justify-content-end">
+        <div class="btn-group" role="group" aria-label="Basic example">
+          <button type="button" class="btn btn-dark">-</button>
+          <button type="button" class="btn btn-dark">+</button>
+        </div>
+      </div>
+      <!-- End: Zoom In/Out Button -->
     </div>
   </div>
 </header>

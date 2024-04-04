@@ -1,16 +1,15 @@
 <!-- Year count -->
 <h6 class="year-text text-center mb-5">
   {{ year }}
-  <!-- <span class="" *ngIf="yearPresentInBetweenTheTimeline.length"> (*)</span> -->
+  <span class="" *ngIf="yearPresentInBetweenTheTimeline.length"> (*)</span>
 </h6>
 
 <!-- Show more button -->
 <div class="show-more">
   <button
     class="btn btn-sm btn-dark"
-    *ngIf="
-      (events && events.length > 3) || yearPresentInBetweenTheTimeline.length
-    "
+    (click)="showMore()"
+    *ngIf="initialTempEvents && initialTempEvents.length > 3"
   >
     Show More
   </button>

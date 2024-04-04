@@ -1,3 +1,13 @@
-<app-timeline (eventDetailsEvent)="openEventDetails()"></app-timeline>
-<app-event-details *ngIf="isEventDetailsOpen" (closeEvent)="isEventDetailsOpen=false" ></app-event-details>
-<!-- <app-event-list-overlay></app-event-list-overlay> -->
+<app-timeline
+  class="d-block h-100"
+  (eventDetailsEvent)="openEventDetails()"
+  (showMoreEvent)="showMore($event)"
+></app-timeline>
+<app-event-details
+  *ngIf="isEventDetailsOpen"
+  (closeEvent)="isEventDetailsOpen = false"
+></app-event-details>
+<app-event-list-overlay
+  *ngIf="isShowMore"
+  [eventList]="eventList"
+></app-event-list-overlay>

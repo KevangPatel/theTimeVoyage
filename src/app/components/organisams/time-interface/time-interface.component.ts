@@ -18,10 +18,17 @@ import { EventListOverlayComponent } from '../event-list-overlay/event-list-over
 })
 export class TimeInterfaceComponent {
   isEventDetailsOpen: boolean = false;
+  isShowMore: boolean = false;
+  eventList: any = [];
 
   constructor() {}
 
   openEventDetails() {
     this.isEventDetailsOpen = true;
+  }
+
+  showMore(eventList: any) {
+    this.eventList = [...eventList];
+    this.isShowMore = true;
   }
 }
