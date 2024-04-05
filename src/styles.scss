@@ -28,7 +28,7 @@ $scrollbar-thumb-bg: #2f3136;
 $scrollbar-track-bg: #c2c6ca;
 
 // Header
-$header-height: 70px;
+$header-height: auto;
 
 // Cards
 $card-bg: $component-bg;
@@ -137,6 +137,7 @@ input[type="number"]::-webkit-outer-spin-button {
     bottom: 0;
     z-index: 999;
     transform: translateX(-100%);
+    border-radius: 0;
 
     .close-menu-label {
       position: absolute;
@@ -286,8 +287,8 @@ header {
 
 // event cards
 .event-card-grid {
-  --event-card-grid-max-width: 220px;
-  --event-card-grid-min-width: 200px;
+  --event-card-grid-max-width: 160px;
+  --event-card-grid-min-width: 140px;
   display: flex;
   flex-direction: column;
   grid-gap: 1.5rem;
@@ -370,7 +371,7 @@ header {
     }
 
     figure {
-      height: 140px;
+      height: 68px;
       width: 100%;
 
       .card-img-top {
@@ -423,7 +424,7 @@ header {
 
     &:after {
       border-radius: 50%;
-      left: 49%;
+      left: 48.5%;
       width: 6px;
       height: 6px;
     }

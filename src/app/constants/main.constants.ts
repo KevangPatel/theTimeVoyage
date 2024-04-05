@@ -60,7 +60,7 @@ class MainConstans {
       date: 2020,
       description:
         'Explore the enlightenment era, a period of intellectual awakening that laid the groundwork for modern civilization.',
-      image: 'http://surl.li/sgxus',
+      image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRejoeTwk4SrrI5o-KCPh4EGnlFK8U1TQ_EXa33i5CM1g&s',
       video:
         'http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerEscapes.mp4',
     },
