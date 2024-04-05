@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, Renderer2 } from '@angular/core';
 import { RouterModule } from '@angular/router';
 
 @Component({
@@ -16,6 +16,25 @@ export class SideBarComponent {
       iconClass: 'icon-time-voyage',
       label: 'Time voyage',
     },
-    { path: '/to-do', iconClass: 'icon-to-do', label: 'To Do' }
+    { path: '/to-do', iconClass: 'icon-to-do', label: 'To Do' },
   ];
+
+  currentTheme: string = 'dark';
+
+  constructor(private renderer: Renderer2) {
+    this.renderer.setAttribute(
+      document.documentElement,
+      'data-bs-theme',
+      this.currentTheme
+    );
+  }
+
+  toggleTheme() {
+    this.currentTheme = this.currentTheme === 'light' ? 'dark' : 'light';
+    this.renderer.setAttribute(
+      document.documentElement,
+      'data-bs-theme',
+      this.currentTheme
+    );
+  }
 }
