@@ -247,6 +247,12 @@ input[type="number"]::-webkit-outer-spin-button {
   --bs-btn-hover-bg: #5051f9;
 }
 
+.btn-toggle {
+  --bs-btn-hover-border-color: none;
+  border-color: var(--bs-btn-color);
+  color: var(--bs-btn-color);
+}
+
 // titles
 .app-title {
   font-size: 22px;

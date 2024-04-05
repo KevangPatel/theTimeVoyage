@@ -19,7 +19,7 @@ export class SideBarComponent {
     { path: '/to-do', iconClass: 'icon-to-do', label: 'To Do' },
   ];
 
-  currentTheme: string = 'dark';
+  public currentTheme: string = 'dark';
 
   constructor(private renderer: Renderer2) {
     this.renderer.setAttribute(

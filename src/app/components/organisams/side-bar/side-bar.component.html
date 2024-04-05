@@ -24,6 +24,9 @@
   </ul>
 
   <div class="flex-shrink-0 p-3 text-center">
-    <button class="btn btn-toggle" (click)="toggleTheme()">Toggle Theme</button>
+    <button class="btn btn-toggle" (click)="toggleTheme()">
+      <span class="icon icon-sun" *ngIf="currentTheme === 'light'"></span>
+      <span class="icon icon-moon" *ngIf="currentTheme === 'dark'"></span>
+    </button>
   </div>
 </aside>
