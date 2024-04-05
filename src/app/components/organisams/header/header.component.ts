@@ -68,10 +68,17 @@ export class HeaderComponent {
     if (increase) {
       value = currentStep == 1 ? currentStep * 10 : currentStep + 10;
     } else {
-      value = currentStep / 10;
+      value = currentStep == 10 ? currentStep / 10 : currentStep - 10;
       if (value < 1) {
-        value = 1; // Ensuring the value doesn't go below 1
+        value = 1;
       }
+    }
+    const calculateMaxRange = this.utilService.timeLineList.getValue();
+    const maxRange = calculateMaxRange[calculateMaxRange.length - 1];
+    const minRange = calculateMaxRange[0];
+    
+    if(minRange+value > maxRange){
+      return
     }
     if (value >= 1) {
       this.utilService.steps.next(value);

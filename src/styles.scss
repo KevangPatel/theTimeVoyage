@@ -229,7 +229,10 @@ header {
   grid-gap: 1.5rem;
   min-width: var(--event-card-grid-min-width);
   max-width: var(--event-card-grid-max-width);
-  animation: fadeInOut 0.4s ease-in-out;
+  // animation: fadeInOut 0.4s ease-in-out;
+  &.fade{
+    animation: fadeInOut 0.4s ease-in-out;
+  }
   opacity: 1;
   transition: 0.4s all;
   .card {

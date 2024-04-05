@@ -56,7 +56,6 @@ export class EventCardComponent {
     });
     this.tempEvents = [...this.events];
     this.findEventBetweenYears();
-    // console.log(this.initialTempEvents);
     this.events = this.events.filter((x: any) => x.date == this.year);
     this.initialTempEvents = [...this.events];
     this.events.length > 3 && this.events.splice(3);
