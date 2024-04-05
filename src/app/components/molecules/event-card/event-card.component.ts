@@ -64,8 +64,12 @@ export class EventCardComponent {
     }
   }
 
-  showMore() {
-    this.showMoreEvent.emit(this.initialTempEvents);
+  showMore(isSubEvent: boolean) {
+    if (isSubEvent) {
+      this.showMoreEvent.emit(this.yearPresentInBetweenTheTimeline);
+    } else {
+      this.showMoreEvent.emit(this.initialTempEvents);
+    }
   }
 
   openEventDetails(event: any) {
