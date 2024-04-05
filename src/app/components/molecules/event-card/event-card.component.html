@@ -1,5 +1,5 @@
 <!-- Year count -->
-<h6 class="year-text text-center mb-5">
+<h6 class="year-text text-center mb-5" *ngIf="year">
   {{ year }}
   <span class="cursor-pointer" *ngIf="yearPresentInBetweenTheTimeline.length" (click)="showMore(true)"> (*)</span>
 </h6>
@@ -30,7 +30,7 @@
       />
     </figure>
     <div class="card-body">
-      <h5 class="card-title">{{ event.title }}</h5>
+      <h5 class="card-title" [title]="event.title">{{ event.title }}</h5>
       <p class="card-text">{{ event.date }}</p>
     </div>
   </div>

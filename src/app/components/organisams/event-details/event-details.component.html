@@ -2,21 +2,29 @@
   <div class="modal-dialog modal-dialog-centered">
     <div class="modal-content shadow">
       <div class="modal-body p-0">
-        <!-- Event image -->
-        <figure class="mb-0">
-          <img
-            [src]="eventDetails.image"
-            class="img-fluid"
-            [alt]="eventDetails.title"
-          />
-        </figure>
+        <!-- Event Video -->
+        <video class="event-video" controls>
+          <source [src]="eventDetails.video" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
 
         <div class="p-3">
           <div
             class="d-flex align-items-center justify-content-between gap-2 flex-wrap mb-3"
           >
-            <!-- Event title -->
-            <h5 class="modal-title text-primary">{{ eventDetails.title }}</h5>
+            <div
+              class="d-flex align-items-center justify-content-between gap-2"
+            >
+              <!-- Event title -->
+              <h5 class="modal-title text-primary">{{ eventDetails.title }}</h5>
+              <figure class="avatar mb-0">
+                <img
+                  [src]="eventDetails.image"
+                  class="img-fluid"
+                  [alt]="eventDetails.title"
+                />
+              </figure>
+            </div>
 
             <!-- Event year -->
             <span class="badge text-bg-warning">{{ eventDetails.date }}</span>

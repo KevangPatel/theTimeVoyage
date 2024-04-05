@@ -230,7 +230,7 @@ header {
   min-width: var(--event-card-grid-min-width);
   max-width: var(--event-card-grid-max-width);
   // animation: fadeInOut 0.4s ease-in-out;
-  &.fade{
+  &.fade {
     animation: fadeInOut 0.4s ease-in-out;
   }
   opacity: 1;
@@ -287,6 +287,11 @@ header {
     .card-title {
       font-size: 18px;
       color: $primary;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      display: -webkit-box;
     }
 
     .card-text {
@@ -367,6 +372,26 @@ header {
   .modal-content {
     overflow: hidden;
   }
+
+  .modal-body {
+    .avatar {
+      height: 40px;
+      width: 40px;
+      border-radius: 50%;
+      overflow: hidden;
+
+      img {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+      }
+    }
+
+    .event-video {
+      width: 100%;
+      height: 280px;
+    }
+  }
 }
 
 // show-more button
@@ -444,6 +469,6 @@ app-event-list-overlay {
   }
 }
 
-.cursor-pointer{
+.cursor-pointer {
   cursor: pointer;
 }
